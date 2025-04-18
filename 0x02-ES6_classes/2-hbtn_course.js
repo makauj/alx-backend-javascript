@@ -4,7 +4,7 @@ export default class ALXCourse {
     this._length = length;
     this._students = students;
   }
-  // getter methos
+
   get name() {
     return this._name;
   }
@@ -17,7 +17,6 @@ export default class ALXCourse {
     return this._students;
   }
 
-  //setter methods
   set name(value) {
     if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
