@@ -1,6 +1,5 @@
 export default class ALXCourse {
   constructor(name, length, students) {
-
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
@@ -45,14 +44,17 @@ export default class ALXCourse {
   }
 
   set students(value) {
+
     if (!Array.isArray(value)) {
       throw new TypeError('students must be an array');
     }
+
     for (const student of value) {
       if (typeof student !== 'string') {
         throw new TypeError('Students must be an array of strings');
       }
     }
+
     this._students = value;
   }
 }
