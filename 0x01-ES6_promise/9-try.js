@@ -1,4 +1,4 @@
-export function guardRail(mathFunction) {
+export default function guardRail(mathFunction) {
   const queue = [];
   try {
     const result = mathFunction();
