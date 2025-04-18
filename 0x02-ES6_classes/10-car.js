@@ -29,7 +29,12 @@ export default class Car {
     this._color = value;
   }
 
+  static get [Symbol.species]() {
+    return this;
+  }
+
   static cloneCar() {
-    return new Car(this._brand, this._motor, this._color);
+    const Constructor = this.constructor[Symbol.species];
+    return new Constructor(this._brand, this._motor, this._color);
   }
 }
