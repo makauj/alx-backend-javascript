@@ -1,4 +1,4 @@
 /* eslint-disable no-unused-vars */
-export default function handleProfileSignup(firstName, lastName) {
+export default function signupUser(firstName, lastName) {
   return Promise.resolve({ firstName, lastName });
 }
