@@ -118,5 +118,3 @@ Apply everything with hands-on projects:
 - E-commerce backend
 
 ---
-
-Want me to help you put together a custom learning plan or suggest a project to start with based on your current level?
