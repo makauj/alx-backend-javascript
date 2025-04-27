@@ -14,8 +14,8 @@ export function sumMajorCredits(
 }
 
 export function sumMinorCredits(
-    subject1: MinorCredits,
-    subjects2: MinorCredits
+  subject1: MinorCredits,
+  subjects2: MinorCredits
 ): MinorCredits {
   return { credits: subject1.credits + subjects2.credits } as MinorCredits;
 }
