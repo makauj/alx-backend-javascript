@@ -43,4 +43,24 @@ export function createEmployee(salary: number | string): Director | Teacher {
     throw new Error("Invalid salary");
   }
 }
-  
+
+export function executeWork(employee: Director | Teacher): string {
+  if (employee instanceof Director) {
+    return employee.workDirectorTasks();
+  } else if (employee instanceof Teacher) {
+    return employee.workTeacherTasks();
+  } else {
+    throw new Error("Invalid employee");
+  }
+}
+
+export type Subjects = ("Math" | "History");
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  if (todayClass === "History") {
+    return "Teaching History";
+  }
+}
