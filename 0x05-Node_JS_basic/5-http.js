@@ -15,7 +15,7 @@ const app = http.createServer(async (req, res) => {
   const { url } = req;
 
   if (url === '/') {
-    res.write('Hello ALX!');
+    res.write('Hello Holberton School!');
   } else if (url === '/students') {
     res.write('This is the list of our students\n');
     try {
