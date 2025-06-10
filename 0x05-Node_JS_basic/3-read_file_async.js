@@ -1,7 +1,7 @@
-const fs = require('fs').promises;
+import { readFile } from 'fs';
 
 function countStudents(path) {
-  return fs.readFile(path, 'utf8')
+  return readFile(path, 'utf8')
     .then((data) => {
       const lines = data.split('\n').filter((line) => line.trim() !== '');
 
@@ -38,4 +38,4 @@ function countStudents(path) {
     });
 }
 
-module.exports = countStudents;
+export default countStudents;
