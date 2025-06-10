@@ -1,8 +1,3 @@
-#!/usr/bin/node
-// script that accepts a file path as an argument.
-// It then reads the content of the file/database synchronously,
-// then prints it to the console
-// Usage: node 2-read_file.js <file_path>
 const fs = require('fs');
 
 function countStudents(path) {
