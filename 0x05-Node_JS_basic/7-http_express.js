@@ -6,13 +6,11 @@ const DB = args[0];
 const app = express();
 const port = 1245;
 
-app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/plain');
+app.get('/', (_, res) => {
   res.send('Hello ALX!');
 });
 
 app.get('/students', async (_, res) => {
-  res.set('Content-Type', 'text/plain');
   const msg = 'This is the list of our students\n';
   try {
     const students = await countStudents(DB); 
