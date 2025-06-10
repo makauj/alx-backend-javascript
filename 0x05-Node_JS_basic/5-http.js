@@ -1,6 +1,3 @@
-#!/usr/bin/node
-// small HTTP server
-
 const http = require('http');
 const countStudents = require('./3-read_file_async');
 const fs = require('fs');
@@ -19,8 +16,6 @@ const app = http.createServer((req, res) => {
 
     countStudents(DB_PATH)
       .then(() => {
-        // To avoid duplicate output from `countStudents`,
-        // we re-read the file to construct the student breakdown again
         return fs.promises.readFile(DB_PATH, 'utf8');
       })
       .then((data) => {
@@ -57,6 +52,6 @@ const app = http.createServer((req, res) => {
   }
 });
 
-app.listen(1245);
+app.listen(1245, '127.0.0.1', () => {});
 
 module.exports = app;
