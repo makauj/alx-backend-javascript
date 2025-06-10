@@ -6,6 +6,8 @@ app.get('/', (req, res) => {
   res.send('Hello ALX!');
 });
 
-app.listen(port);
+app.listen(port , () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
 
 module.exports = app;
