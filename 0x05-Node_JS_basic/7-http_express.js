@@ -8,7 +8,7 @@ const port = 1245;
 
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/plain');
-  res.send('Hello Holberton School!');
+  res.send('Hello ALX!');
 });
 
 app.get('/students', async (req, res) => {
