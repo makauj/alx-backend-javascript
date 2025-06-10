@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 function main() {
   const readline = require('readline');
 
