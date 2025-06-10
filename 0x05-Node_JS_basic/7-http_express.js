@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.send('Hello ALX!');
 });
 
-app.get('/students', async (req, res) => {
+app.get('/students', async (_, res) => {
   res.set('Content-Type', 'text/plain');
   const msg = 'This is the list of our students\n';
   try {
