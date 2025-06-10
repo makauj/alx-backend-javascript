@@ -1,57 +1,34 @@
 const http = require('http');
+
+const args = process.argv.slice(2);
 const countStudents = require('./3-read_file_async');
-const fs = require('fs');
 
-const DB_PATH = process.argv[2];
+const DATABASE = args[0];
 
-const app = http.createServer((req, res) => {
+const hostname = '127.0.0.1';
+const port = 1245;
+
+const app = http.createServer(async (req, res) => {
+  res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
 
-  if (req.url === '/') {
-    res.statusCode = 200;
-    res.end('Hello ALX!');
-  } else if (req.url === '/students') {
-    res.statusCode = 200;
-    let responseText = 'This is the list of our students\n';
+  const { url } = req;
 
-    countStudents(DB_PATH)
-      .then(() => {
-        return fs.promises.readFile(DB_PATH, 'utf8');
-      })
-      .then((data) => {
-        const lines = data.split('\n').filter((line) => line.trim() !== '');
-        const students = lines.slice(1);
-        const fieldData = {};
-        let total = 0;
-
-        for (const line of students) {
-          const parts = line.split(',');
-          if (parts.length < 4) continue;
-          const firstName = parts[0].trim();
-          const field = parts[3].trim();
-
-          if (!fieldData[field]) fieldData[field] = [];
-          fieldData[field].push(firstName);
-          total += 1;
-        }
-
-        responseText += `Number of students: ${total}\n`;
-        for (const field in fieldData) {
-          const list = fieldData[field];
-          responseText += `Number of students in ${field}: ${list.length}. List: ${list.join(', ')}\n`;
-        }
-
-        res.end(responseText.trim());
-      })
-      .catch(() => {
-        res.end('Cannot load the database');
-      });
-  } else {
-    res.statusCode = 404;
-    res.end('Not found');
+  if (url === '/') {
+    res.write('Hello Holberton School!');
+  } else if (url === '/students') {
+    res.write('This is the list of our students\n');
+    try {
+      const students = await countStudents(DATABASE);
+      res.end(`${students.join('\n')}`);
+    } catch (error) {
+      res.end(error.message);
+    }
   }
+  res.statusCode = 404;
+  res.end();
 });
 
-app.listen(1245, '127.0.0.1', () => {});
+app.listen(port, hostname, () => {});
 
 module.exports = app;
