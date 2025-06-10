@@ -8,6 +8,8 @@ app.get('/', (_, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(port, () => {});
+app.listen(port, () => {
+  console.log();
+});
 
 module.exports = app;

@@ -7,7 +7,7 @@ const app = express();
 const port = 1245;
 
 app.get('/', (_, res) => {
-  res.send('Hello ALX!');
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', async (_, res) => {
@@ -20,6 +20,8 @@ app.get('/students', async (_, res) => {
   }
 });
 
-app.listen(port);
+app.listen(port, () => {
+  console.log();
+});
 
 module.exports = app;

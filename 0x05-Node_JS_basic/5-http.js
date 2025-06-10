@@ -29,6 +29,8 @@ const app = http.createServer(async (req, res) => {
   res.end();
 });
 
-app.listen(port, hostname, () => {});
+app.listen(port, hostname, () => {
+  console.log();
+});
 
 module.exports = app;
