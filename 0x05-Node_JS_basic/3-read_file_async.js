@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// eslint-disable line no-unused-vars
+// eslint-disable
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (err, data) => {
