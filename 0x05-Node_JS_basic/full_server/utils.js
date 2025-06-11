@@ -1,38 +1,33 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-function readDatabase(filePath) {
-  return fs.readFile(filePath, 'utf8')
-    .then((data) => {
-      const lines = data.split('\n').filter((line) => line.trim() !== '');
-      if (lines.length < 2) {
-        return {};
+function readDatabase(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf-8', (err, data) => {
+      if (err) {
+        reject(new Error('Cannot load the database'));
+        return;
       }
 
-      const studentsByField = {};
-      const headers = lines[0].split(',');
+      const lines = data.split('\n').filter(line => line.trim() !== '');
+      const students = lines.slice(1);
+      const result = {};
 
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) continue;
+      for (const line of students) {
+        const parts = line.split(',');
+        if (parts.length < 4) continue;
 
-        const values = line.split(',');
-        const firstName = values[0].trim();
-        const field = values[3].trim(); // Assuming the 4th column is field
+        const firstname = parts[0];
+        const field = parts[3];
 
-        if (firstName && field) {
-          if (!studentsByField[field]) {
-            studentsByField[field] = [];
-          }
-          studentsByField[field].push(firstName);
-        }
+        if (!result[field]) result[field] = [];
+        result[field].push(firstname);
       }
 
-      return studentsByField;
-    })
-    .catch((err) => {
-      // Reject promise with error
-      return Promise.reject(err);
+      resolve(result);
     });
+  });
 }
 
-module.exports = readDatabase;
+module.exports = {
+  readDatabase,
+};
