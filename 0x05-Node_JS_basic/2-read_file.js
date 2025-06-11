@@ -9,14 +9,14 @@ function countStudents(path) {
       throw new Error('Cannot load the database');
     }
 
-    const students = lines.slice(1); // remove header
+    const students = lines.slice(1);
     const fieldData = {};
 
     let total = 0;
 
     for (const line of students) {
       const parts = line.split(',');
-      if (parts.length < 4) continue; // skip malformed lines
+      if (parts.length < 4) continue;
       const firstName = parts[0].trim();
       const field = parts[3].trim();
 
