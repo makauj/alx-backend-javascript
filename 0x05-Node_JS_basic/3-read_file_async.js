@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// eslint-disable line no-unused-vars
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (err, data) => {
@@ -31,7 +32,7 @@ function countStudents(path) {
 
       console.log(`Number of students: ${total}`);
       for (const [field, names] of Object.entries(result)) {
-        // eslint-disable-line no-console, max-len
+        // eslint-disable-line
         console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
       }
 
