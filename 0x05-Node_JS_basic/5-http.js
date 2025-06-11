@@ -1,5 +1,4 @@
 const http = require('http');
-const fs = require('fs');
 
 const args = process.argv.slice(2);
 const countStudents = require('./3-read_file_async');
