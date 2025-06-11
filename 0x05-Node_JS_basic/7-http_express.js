@@ -7,21 +7,21 @@ const app = express();
 const port = 1245;
 
 app.get('/', (_, res) => {
+  res.type('text/plain');
   res.send('Hello ALX!');
 });
 
 app.get('/students', async (_, res) => {
+  res.type('text/plain');
   const msg = 'This is the list of our students\n';
   try {
-    const students = await countStudents(DB); 
+    const students = await countStudents(DB);
     res.send(`${msg}${students.join('\n')}`);
   } catch (error) {
     res.send(`${msg}${error.message}`);
   }
 });
 
-app.listen(port, () => {
-  console.log();
-});
+app.listen(port);
 
 module.exports = app;
