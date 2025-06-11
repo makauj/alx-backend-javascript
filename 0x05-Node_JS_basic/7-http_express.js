@@ -1,13 +1,13 @@
 const express = require('express');
-const args = process.argv.slice(2);
 const countStudents = require('./3-read_file_async');
 
+const args = process.argv.slice(2);
 const DB = args[0];
 const app = express();
 const port = 1245;
 
 app.get('/', (_, res) => {
-  res.send('Hello Holberton School!');
+  res.send('Hello ALX!');
 });
 
 app.get('/students', async (_, res) => {
