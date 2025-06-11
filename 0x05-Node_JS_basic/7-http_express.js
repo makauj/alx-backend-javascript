@@ -12,7 +12,7 @@ function countStudents(path) {
       }
 
       const lines = data.split('\n').filter(line => line.trim() !== '');
-      const students = lines.slice(1); // remove header
+      const students = lines.slice(1);
 
       const grouped = {};
       for (const line of students) {
@@ -26,7 +26,8 @@ function countStudents(path) {
 
       let result = `Number of students: ${students.length}`;
       for (const [field, names] of Object.entries(grouped)) {
-        result += `\nNumber of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
+        result += (`\nNumber of students in ${field}: ${names.length}. \
+          List: ${names.join(', ')}`);
       }
 
       resolve(result);
