@@ -31,6 +31,7 @@ function countStudents(path) {
 
       console.log(`Number of students: ${total}`);
       for (const [field, names] of Object.entries(result)) {
+        // eslint-disable-line no-console, max-len
         console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
       }
 
