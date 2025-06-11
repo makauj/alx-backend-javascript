@@ -26,8 +26,7 @@ function countStudents(path) {
 
       let result = `Number of students: ${students.length}`;
       for (const [field, names] of Object.entries(grouped)) {
-        result += (`\nNumber of students in ${field}: ${names.length}. \
-          List: ${names.join(', ')}`);
+        result += `\nNumber of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
       }
 
       resolve(result);
