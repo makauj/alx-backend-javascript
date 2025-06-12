@@ -1,31 +1,20 @@
 {
-  "name": "js unittests",
+  "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "A simple project to run Mocha tests",
-  "authors": ["John Makau <makauwanyoike@gmail.com>"],
-  "private": true,
-  "main": "index.js",
+  "description": "",
+  "main": "0-calcul.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
   "devDependencies": {
-    "mocha": "^6.2.2",
-    "babel-cli": "^6.26.0",
-    "nodemon": "^10.15.3",
-    "eslint": "9.28.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "chai": "^4.2.0",
-    "sinon": "^9.2.4",
-    "request": "^2.88.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/makauj/alx-backend-javascript"
-  },
-  "keywords": ["javascript", "mocha", "testing", "unit tests", "chai", "sinon"],
-  "engines": {
-    "node": ">=10.0.0"
+    "chai": "^5.2.0",
+    "mocha": "^11.6.0",
+    "request": "^2.88.2"
   }
 }
