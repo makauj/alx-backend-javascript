@@ -38,6 +38,13 @@ describe('Cart page', () => {
     });
   });
 
+  it('GET /cart/a1b2c3 should return 404', (done) => {
+    request.get(`${base}/cart/a1b2c3`, (err, res, body) => {
+      expect(res.statusCode).to.equal(404);
+      done();
+    });
+  })
+
   it('GET /cart/123abc should return 404', (done) => {
     request.get(`${base}/cart/123abc`, (err, res, body) => {
       expect(res.statusCode).to.equal(404);
