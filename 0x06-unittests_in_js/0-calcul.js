@@ -1,8 +1,7 @@
 function calculateNumber(a, b) {
-  // This function takes two numbers, rounds them and returns their sum.
-  numA = Math.round(a);
-  numB = Math.round(b);
-  return numA + numB;
+    firstInt = Math.round(a);
+    secondInt = Math.round(b);
+    return firstInt + secondInt;
 }
 
 module.exports = calculateNumber;
