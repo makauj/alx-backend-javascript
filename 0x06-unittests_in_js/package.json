@@ -4,9 +4,8 @@
   "description": "",
   "main": "0-calcul.js",
   "scripts": {
-    "test": "mocha"
-
-  },
+  "test": "node ./node_modules/mocha/bin/mocha"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

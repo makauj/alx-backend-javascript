@@ -40,8 +40,8 @@ describe("Calculates two floats w/borderline reversed:", function() {
     });
 });
 describe("Calculates two floats w/borderline reversed (round down):", function() {
-    it('Returns 5.', function() {
-        assert.strictEqual(calculateNumber(3.3, 1.2), 5);
+    it('Returns 4.', function() {
+        assert.strictEqual(calculateNumber(3.3, 1.2), 4);
     });
 });
 describe("Calculates two integers:", function() {
