@@ -2,7 +2,7 @@ const assert = require('assert');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', function () {
-  describe('SUM', function () {
+  describe('Tests type=SUM', function () {
     it('should return 6 when adding 1.4 and 4.5', function () {
       assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
     });
@@ -12,7 +12,7 @@ describe('calculateNumber', function () {
     });
   });
 
-  describe('SUBTRACT', function () {
+  describe('Tests type=SUBTRACT', function () {
     it('should return -4 when subtracting 1.4 and 4.5', function () {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
     });
@@ -22,7 +22,7 @@ describe('calculateNumber', function () {
     });
   });
 
-  describe('DIVIDE', function () {
+  describe('Tests type=DIVIDE', function () {
     it('should return 0.2 when dividing 1.4 by 4.5', function () {
       assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
     });
@@ -36,7 +36,7 @@ describe('calculateNumber', function () {
     });
   });
 
-  describe('Invalid type', function () {
+  describe('Tests type=Invalid', function () {
     it('should throw an error for invalid operation type', function () {
       assert.throws(() => calculateNumber('MULTIPLY', 1, 2), /Invalid operation type/);
     });

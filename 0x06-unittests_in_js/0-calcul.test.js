@@ -1,5 +1,6 @@
 const assert = require('assert');
 const calculateNumber = require('./0-calcul');
+const describe = require('mocha').describe;
 
 describe("Tests calculateNumber function:", function() {
     describe("Calculates two integers:", function() {
