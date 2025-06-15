@@ -1,4 +1,3 @@
-// unittests for the 0-calcul module
 const assert = require('assert');
 const { calculate } = require('./0-calcul');
 
