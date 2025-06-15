@@ -1,20 +1,18 @@
 {
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "",
-  "main": "0-calcul.js",
   "scripts": {
   "test": "node ./node_modules/mocha/bin/mocha"
 },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "John Makau",
+  "license": "MIT",
+  
   "dependencies": {
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "chai": "^5.2.0",
-    "mocha": "^11.6.0",
-    "request": "^2.88.2"
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "request": "^2.88.2",
+    "sinon": "^10.0.0",
+    "requst": "^2.88.2"
   }
 }
