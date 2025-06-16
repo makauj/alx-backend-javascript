@@ -116,5 +116,4 @@ Apply everything with hands-on projects:
 - REST API for a movie/book app
 - Chat app using WebSockets
 - E-commerce backend
-
 ---
